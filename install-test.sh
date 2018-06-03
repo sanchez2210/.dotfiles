@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+echo 'Installing pacman packages'
 sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git green-recorder pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
 
+echo 'Installing yaourt packages'
 sudo yaourt -S --noconfirm franz-bin heroku-cli upwork postman-bin peek rcm
 
 # .dotfiles
