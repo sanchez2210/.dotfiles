@@ -4,13 +4,15 @@ main() {
   sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
 
   echo 'Installing yaourt packages'
-  yaourt -S --noconfirm franz-bin heroku-cli upwork postman-bin peek rcm green-recorder
+  yaourt -S franz-bin heroku-cli upwork postman-bin peek rcm green-recorder
 
   #.dotfiles
+  echo 'Installing dotfiles'
   git clone https://github.com/sanchez2210/.dotfiles ~/.dotfiles
   rcup
 
   # asdf
+  echo 'Installing asdf'
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.0
 
   env zsh
@@ -22,10 +24,12 @@ main() {
   asdf install ruby 2.5.1
 
   # vundler
+  echo 'Installing Vundle'
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
 
   # oh-my-zsh
+  echo 'Installing Oh-My-Zsh'
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
   # CONFIG
