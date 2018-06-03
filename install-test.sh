@@ -1,7 +1,7 @@
 main() {
 
   echo 'Installing pacman packages'
-  pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
+  sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
 
   echo 'Installing yaourt packages'
   yaourt -S --noconfirm franz-bin heroku-cli upwork postman-bin peek rcm green-recorder
