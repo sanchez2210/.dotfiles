@@ -1,3 +1,52 @@
+: ${VERBOSE:=0}
+: ${CP:=/bin/cp}
+: ${LN:=/bin/ln}
+: ${MKDIR:=/bin/mkdir}
+: ${RM:=/bin/rm}
+: ${DIRNAME:=/usr/bin/dirname}
+: ${XARGS:=/usr/bin/xargs}
+verbose() {
+  if [ "$VERBOSE" -gt 0 ]; then
+    echo "$@"
+  fi
+}
+handle_file_cp() {
+  if [ -e "$2" ]; then
+    printf "%s " "overwrite $2? [yN]"
+    read overwrite
+    case "$overwrite" in
+      y)
+        $RM -rf "$2"
+        ;;
+      *)
+        echo "skipping $2"
+        return
+        ;;
+    esac
+  fi
+  verbose "'$1' -> '$2'"
+  $DIRNAME "$2" | $XARGS $MKDIR -p
+  $CP -R "$1" "$2"
+}
+handle_file_ln() {
+  if [ -e "$2" ]; then
+    printf "%s " "overwrite $2? [yN]"
+    read overwrite
+    case "$overwrite" in
+      y)
+        $RM -rf "$2"
+        ;;
+      *)
+        echo "skipping $2"
+        return
+        ;;
+    esac
+  fi
+  verbose "'$1' -> '$2'"
+  $DIRNAME "$2" | $XARGS $MKDIR -p
+  $LN -sf "$1" "$2"
+}
+
 main() {
 
   echo 'Installing pacman packages'
@@ -15,7 +64,16 @@ main() {
   #.dotfiles
   echo 'Installing dotfiles'
   git clone https://github.com/sanchez2210/.dotfiles ~/.dotfiles
-  rcup
+
+  handle_file_ln "/home/luis/.dotfiles/default-gems" "/home/luis/.default-gems"
+  handle_file_ln "/home/luis/.dotfiles/install.sh" "/home/luis/.install.sh"
+  handle_file_ln "/home/luis/.dotfiles/install-test.sh" "/home/luis/.install-test.sh"
+  handle_file_ln "/home/luis/.dotfiles/tmux.conf" "/home/luis/.tmux.conf"
+  handle_file_ln "/home/luis/.dotfiles/tool-versions" "/home/luis/.tool-versions"
+  handle_file_ln "/home/luis/.dotfiles/vimrc" "/home/luis/.vimrc"
+  handle_file_ln "/home/luis/.dotfiles/vimrc.bundles" "/home/luis/.vimrc.bundles"
+  handle_file_ln "/home/luis/.dotfiles/zshenv" "/home/luis/.zshenv"
+  handle_file_ln "/home/luis/.dotfiles/zshrc" "/home/luis/.zshrc"
 
   # asdf
   echo 'Installing asdf'
