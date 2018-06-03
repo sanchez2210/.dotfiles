@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-sudo pacman -Syy --noconfirm
-sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git green-recorder pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal zsh
+sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git green-recorder pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
 
-sudo yaourt -Syy --noconfirm
 sudo yaourt -S --noconfirm franz-bin heroku-cli upwork postman-bin peek rcm
 
 # .dotfiles
