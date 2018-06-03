@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-sudo pacman -Syyu
-sudo pacman -S anki chromium calibre diff-so-fancy firefox git green-recorder pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal zsh
+sudo pacman -Syyu --noconfirm
+sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git green-recorder pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal zsh
 
-sudo yaourt -Syy
-sudo yaourt --noconfirm -S franz-bin heroku-cli upwork postman-bin peek rcm
+sudo yaourt -Syy --noconfirm
+sudo yaourt -S --noconfirm franz-bin heroku-cli upwork postman-bin peek rcm
 
 # asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.0
