@@ -6,6 +6,10 @@ sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git green
 sudo yaourt -Syy --noconfirm
 sudo yaourt -S --noconfirm franz-bin heroku-cli upwork postman-bin peek rcm
 
+# .dotfiles
+git clone https://github.com/sanchez2210/.dotfiles ~/.dotfiles
+rcup
+
 # asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.0
 
