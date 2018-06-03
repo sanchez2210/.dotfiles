@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+main() {
+  #!/usr/bin/env bash
 
 # echo 'Installing pacman packages'
 # sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git green-recorder pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
@@ -34,3 +35,6 @@ sudo yaourt -S --noconfirm franz-bin heroku-cli upwork postman-bin peek rcm
 # git config --global user.name "Luis Felipe Sanchez"
 # git config --global user.email sanchezhorna@outlook.com
 # git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+}
+
+main
