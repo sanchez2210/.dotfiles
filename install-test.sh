@@ -1,10 +1,10 @@
 main() {
 
   echo 'Installing pacman packages'
-  sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git green-recorder pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
+  sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
 
   echo 'Installing yaourt packages'
-  sudo yaourt -S --noconfirm franz-bin heroku-cli upwork postman-bin peek rcm
+  sudo yaourt -S --noconfirm franz-bin heroku-cli upwork postman-bin peek rcm green-recorder
 
   #.dotfiles
   git clone https://github.com/sanchez2210/.dotfiles ~/.dotfiles
@@ -13,7 +13,7 @@ main() {
   # asdf
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.0
 
-  zsh
+  env zsh
 
   asdf plugin-add asdf-ruby
   asdf plugin-add asdf-nodejs
