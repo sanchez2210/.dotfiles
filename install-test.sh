@@ -4,7 +4,13 @@ main() {
   sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
 
   echo 'Installing yaourt packages'
-  yaourt -S franz-bin heroku-cli upwork postman-bin peek rcm green-recorder
+  yaourt -S franz-bin
+  yaourt -S green-recorder
+  yaourt -S heroku-cli
+  yaourt -S upwork
+  yaourt -S postman-bin
+  yaourt -S peek
+  yaourt -S rcm
 
   #.dotfiles
   echo 'Installing dotfiles'
