@@ -1,5 +1,8 @@
 + Videos/
 + Videos/**
+- workspace/**/log/
+- workspace/**/tmp/
+- workspace/**/node_modules/
 + workspace/
 + workspace/**
 + Fonts/

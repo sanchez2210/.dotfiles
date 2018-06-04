@@ -83,3 +83,4 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mux=tmuxinator
 alias gdtl="git difftool -y"
+alias backup="zsh ~/.backup.sh"
