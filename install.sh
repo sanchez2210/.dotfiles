@@ -95,8 +95,8 @@ main() {
   echo 'Installing asdf'
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.0
 
-  zsh -c "asdf plugin-add asdf-ruby"
-  zsh -c "asdf plugin-add asdf-nodejs"
+  zsh -c "asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git"
+  zsh -c "asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
 
   zsh -c "asdf install ruby 2.4.4"
   zsh -c "asdf install ruby 2.5.1"
