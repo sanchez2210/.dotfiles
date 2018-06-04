@@ -1,0 +1,13 @@
++ Videos/
++ Videos/**
++ workspace/
++ workspace/**
++ Fonts/
++ Fonts/**
++ Downloads/
++ Downloads/**
++ Documents/
++ Documents/**
++ Calibre\ Library/
++ Calibre\ Library/**
+- *
