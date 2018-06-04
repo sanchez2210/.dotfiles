@@ -1,5 +1,9 @@
 + Videos/
 + Videos/**
++ Pictures/
++ Pictures/**
++ Music/
++ Music/**
 - workspace/**/log/
 - workspace/**/tmp/
 - workspace/**/node_modules/
@@ -11,6 +15,8 @@
 + Downloads/**
 + Documents/
 + Documents/**
-+ Calibre\ Library/
-+ Calibre\ Library/**
++ Calibre Library/
++ Calibre Library/**
++ VirtualBox VMs/
++ VirtualBox VMs/**
 - *
