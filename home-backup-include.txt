@@ -17,6 +17,4 @@
 + Documents/**
 + Calibre Library/
 + Calibre Library/**
-+ VirtualBox VMs/
-+ VirtualBox VMs/**
 - *
