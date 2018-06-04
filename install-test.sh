@@ -51,7 +51,7 @@ main() {
 
   echo 'Installing pacman packages'
   sudo pacman -Syyu
-  sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal
+  sudo pacman -S --noconfirm anki chromium calibre diff-so-fancy firefox git pamac pinta the_silver_searcher tmux vim wavemon yaourt zeal zsh
 
   echo 'Installing yaourt packages'
   yaourt -S franz-bin
@@ -61,6 +61,14 @@ main() {
   yaourt -S postman-bin
   yaourt -S peek
   yaourt -S rcm
+
+  # zsh
+  echo 'Making Zsh default shell'
+  chsh -s $(which zsh)
+
+  # oh-my-zsh
+  echo 'Installing Oh-My-Zsh'
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
   #.dotfiles
   echo 'Installing dotfiles'
@@ -76,24 +84,22 @@ main() {
   handle_file_ln "/home/luis/.dotfiles/zshenv" "/home/luis/.zshenv"
   handle_file_ln "/home/luis/.dotfiles/zshrc" "/home/luis/.zshrc"
 
+  # vundler
+  echo 'Installing Vundle'
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+  # Vim plugins
+  vim +PluginInstall +qall
+
   # asdf
   echo 'Installing asdf'
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.0
 
-  asdf plugin-add asdf-ruby
-  asdf plugin-add asdf-nodejs
+  zsh -c "asdf plugin-add asdf-ruby"
+  zsh -c "asdf plugin-add asdf-nodejs"
 
-  asdf install ruby 2.4.4
-  asdf install ruby 2.5.1
-
-  # vundler
-  echo 'Installing Vundle'
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  vim +PluginInstall +qall
-
-  # oh-my-zsh
-  echo 'Installing Oh-My-Zsh'
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  zsh -c "asdf install ruby 2.4.4"
+  zsh -c "asdf install ruby 2.5.1"
 
   # CONFIG
 
