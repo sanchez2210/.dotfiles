@@ -4,7 +4,8 @@
 + Pictures/**
 + Music/
 + Music/**
-- workspace/**/log/
++ workspace/**/log/.keep
+- workspace/**/log/**
 - workspace/**/public/packs/
 - workspace/**/tmp/
 - workspace/**/node_modules/
