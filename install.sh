@@ -95,11 +95,17 @@ main() {
   echo 'Installing asdf'
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.0
 
+  # Ruby
+  echo 'installing ruby versions'
   zsh -c "asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git"
-  zsh -c "asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
-
   zsh -c "asdf install ruby 2.4.4"
   zsh -c "asdf install ruby 2.5.1"
+
+  # Node
+  echo 'installing nodejs versions'
+  zsh -c "asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
+  bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+  zsh -c "asdf install nodejs 8.11.2"
 
   # CONFIG
 
