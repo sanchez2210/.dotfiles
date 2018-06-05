@@ -7,7 +7,7 @@ export PATH=$HOME/bin:$PATH
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="re5et"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -85,3 +85,5 @@ alias mux=tmuxinator
 alias gdtl="git difftool -y"
 alias backup="rsync -av --delete $HOME/ /run/media/luis/Backup/luis/ --include-from=$HOME/.home-backup-include.txt --delete-excluded"
 alias backup-restore="rsync /run/media/luis/Backup/luis/ $HOME -av"
+
+eval $(thefuck --alias --enable-experimental-instant-mode)
