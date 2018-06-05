@@ -109,7 +109,15 @@ main() {
 
   # CONFIG
 
+  # Postgresql
+  echo 'Postgresql configuration'
+  sudo -u postgres initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
+  systemctl start postgresql.service
+  systemctl enable postgresql.service
+  sudo -u postgres createuser --interactive
+
   # git
+  echo 'Git configuration'
   git config --global user.name "Luis Felipe Sanchez"
   git config --global user.email sanchezhorna@outlook.com
   git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
