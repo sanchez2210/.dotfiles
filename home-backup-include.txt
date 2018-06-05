@@ -5,6 +5,7 @@
 + Music/
 + Music/**
 - workspace/**/log/
+- workspace/**/public/packs/
 - workspace/**/tmp/
 - workspace/**/node_modules/
 + workspace/

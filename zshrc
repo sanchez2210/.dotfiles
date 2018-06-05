@@ -83,4 +83,5 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mux=tmuxinator
 alias gdtl="git difftool -y"
-alias backup="zsh ~/.backup.sh"
+alias backup="rsync -av --delete $HOME/ /run/media/luis/Backup/luis/ --include-from=$HOME/.home-backup-include.txt --delete-excluded"
+alias backup-restore="rsync /run/media/luis/Backup/luis/ $HOME -av"
