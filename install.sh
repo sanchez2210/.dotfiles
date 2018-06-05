@@ -107,6 +107,7 @@ main() {
   git config --global user.name "Luis Felipe Sanchez"
   git config --global user.email sanchezhorna@outlook.com
   git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+  git config --global credential.helper 'cache --timeout=14400'
 }
 
 main
