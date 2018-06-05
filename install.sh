@@ -51,7 +51,7 @@ main() {
 
   echo 'Installing pacman packages'
   sudo pacman -Syyu
-  sudo pacman -S anki chromium calibre diff-so-fancy firefox git pamac pinta rsync the_silver_searcher tmux ttf-ubuntu-font-family vim wavemon yaourt zeal zsh
+  sudo pacman -S anki chromium calibre diff-so-fancy firefox git pamac pinta postgresql rsync the_silver_searcher tmux ttf-ubuntu-font-family vim wavemon yaourt zeal zsh
 
   echo 'Installing yaourt packages'
   yaourt -S franz-bin
