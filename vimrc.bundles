@@ -13,7 +13,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Define bundles via Github repos
 Plugin 'airblade/vim-gitgutter'
-Plugin 'christoomey/vim-run-interactive'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'janko-m/vim-test'
