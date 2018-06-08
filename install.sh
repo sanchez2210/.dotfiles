@@ -51,7 +51,7 @@ main() {
 
   echo 'Installing pacman packages'
   sudo pacman -Syyu
-  sudo pacman -S anki chromium calibre diff-so-fancy firefox git pamac pinta postgresql rsync the_silver_searcher thefuck tmux ttf-ubuntu-font-family vim wavemon yaourt yarn zeal zsh
+  sudo pacman -S anki chromium calibre diff-so-fancy firefox git imagemagick pamac pinta postgresql rsync the_silver_searcher thefuck tmux ttf-ubuntu-font-family vim wavemon yaourt yarn zeal zsh
 
   echo 'Installing yaourt packages'
   yaourt -S franz-bin
@@ -122,6 +122,10 @@ main() {
   git config --global user.email sanchezhorna@outlook.com
   git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
   git config --global credential.helper 'cache --timeout=14400'
+
+  # Listen
+  echo 'Increasing the amount of inotify watchers'
+  echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
 }
 
 main
