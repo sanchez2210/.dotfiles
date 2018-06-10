@@ -84,6 +84,6 @@ export EDITOR='vim'
 alias mux=tmuxinator
 alias backup="rsync -av --delete $HOME/ /run/media/luis/Backup/luis/ --include-from=$HOME/.home-backup-include.txt --delete-excluded"
 alias backup-restore="rsync /run/media/luis/Backup/luis/ $HOME -av"
-alias ls="ls -h"
+alias ls="ls -h --color=auto"
 
 eval $(thefuck --alias --enable-experimental-instant-mode)
