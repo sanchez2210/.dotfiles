@@ -51,7 +51,7 @@ ZSH_THEME="re5et"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails bundler ruby tmux tmuxinator)
+plugins=(git rails bundler ruby tmuxinator autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,5 +85,6 @@ alias mux=tmuxinator
 alias backup="rsync -av --delete $HOME/ /run/media/luis/Backup/luis/ --include-from=$HOME/.home-backup-include.txt --delete-excluded"
 alias backup-restore="rsync /run/media/luis/Backup/luis/ $HOME -av"
 alias ls="ls -h --color=auto"
+alias :q="exit"
 
 eval $(thefuck --alias --enable-experimental-instant-mode)
