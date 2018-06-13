@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font scientifica:regular 10
+font pango:scientifica 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -74,7 +74,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split x
+bindsym $mod+x split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -150,6 +150,12 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# toggle sound up and down
+bindsym XF86MonBrightnessUp   exec sh $HOME/.scripts/backlight-up.sh
+bindsym XF86MonBrightnessDown exec sh $HOME/.scripts/backlight-down.sh
+bindsym XF86AudioRaiseVolume  exec sh $HOME/.scripts/volume-up.sh
+bindsym XF86AudioLowerVolume  exec sh $HOME/.scripts/volume-down.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
