@@ -51,13 +51,16 @@ main() {
 
   echo 'Installing pacman packages'
   sudo pacman -Syyu
-  sudo pacman -S anki chromium calibre diff-so-fancy dmenu firefox flameshot git imagemagick i3 pamac pinta postgresql redshift rsync the_silver_searcher thefuck tmux ttf-ubuntu-font-family vim wavemon xorg-xbacklight yaourt yarn zeal zsh
+  sudo pacman -S chromium calibre diff-so-fancy firefox flameshot git imagemagick pamac pinta postgresql redshift rsync the_silver_searcher tmux ttf-ubuntu-font-family vim wavemon xorg-xbacklight yarn zeal zsh
+  # sudo pacman -S yaourt
+  # sudo pacman -S dmenu
+  # sudo pacman -S i3
 
   echo 'Installing yaourt packages'
-  yaourt -S franz-bin
+  # yaourt -S franz-bin
   yaourt -S green-recorder
   yaourt -S heroku-cli
-  yaourt -S upwork
+  # yaourt -S upwork
   yaourt -S postman-bin
   yaourt -S peek
   yaourt -S rcm
