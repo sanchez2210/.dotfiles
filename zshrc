@@ -86,5 +86,6 @@ alias backup="rsync -av --delete $HOME/ /run/media/luis/Backup/luis/ --include-f
 alias backup-restore="rsync /run/media/luis/Backup/luis/ $HOME -av"
 alias ls="ls -h --color=auto"
 alias :q="exit"
+alias myip="ip addr show dev wlp3s0 | ag inet"
 
 eval $(thefuck --alias --enable-experimental-instant-mode)
