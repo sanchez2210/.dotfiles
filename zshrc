@@ -88,4 +88,5 @@ alias ls="ls -h --color=auto"
 alias :q="exit"
 alias myip="ip addr show dev wlp3s0 | ag inet"
 
-eval $(thefuck --alias --enable-experimental-instant-mode)
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh

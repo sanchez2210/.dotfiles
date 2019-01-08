@@ -18,7 +18,6 @@ set laststatus=2  " Always display the status line
 
 " Easier switching out of insert mode
 inoremap jk <ESC>
-inoremap kj <ESC>
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -53,8 +52,12 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md       set filetype=markdown
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+augroup END
 
-  " ALE linting events
+" ALE linting events
+augroup ale
+  autocmd!
+
   if g:has_async
     set updatetime=1000
     let g:ale_lint_on_text_changed = 0
@@ -80,18 +83,19 @@ set nojoinspaces
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
-  let g:ackprg = 'ag --vimgrep'
+  set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+  " let g:ctrlp_user_command = 'ag --literal --files-with-matches --nocolor --hidden -g "" %s'
+  let $FZF_DEFAULT_COMMAND = 'ag --ignore .git --hidden -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  " let g:ctrlp_use_caching = 0
 
-  if !exists(":Ack")
-    nnoremap \ :Ack<SPACE>
-  endif
+  nnoremap \ :Ag<SPACE>
 endif
+
+nnoremap <C-p> :Files<CR>
 
 " Make it obvious where 80 characters es
 set textwidth=80
@@ -99,7 +103,7 @@ set colorcolumn=+1
 
 " Numbers
 set number
-set numberwidth=5
+set numberwidth=4
 
 " Tab completion
 " will insert tab at beginning of line,

@@ -51,7 +51,7 @@ main() {
 
   echo 'Installing pacman packages'
   sudo pacman -Syyu
-  sudo pacman -S chromium calibre diff-so-fancy firefox flameshot git
+  sudo pacman -S chromium calibre diff-so-fancy firefox flameshot fzf git
   sudo pacman -S imagemagick pamac pinta postgresql redshift rsync
   sudo pacman -S the_silver_searcher tmux ttf-ubuntu-font-family gvim
   sudo pacman -S wavemon xorg-xbacklight yarn zeal zsh
