@@ -51,13 +51,16 @@ main() {
 
   echo 'Installing pacman packages'
   sudo pacman -Syyu
-  sudo pacman -S chromium calibre diff-so-fancy firefox flameshot fzf git
-  sudo pacman -S imagemagick pamac pinta postgresql redshift rsync
-  sudo pacman -S the_silver_searcher tmux ttf-ubuntu-font-family gvim
-  sudo pacman -S wavemon xorg-xbacklight yarn zeal zsh
-  # sudo pacman -S yaourt
+  sudo pacman -S diff-so-fancy firefox flameshot fzf git
+  sudo pacman -S postgresql imagemagick the_silver_searcher tmux
+  sudo pacman -S ttf-ubuntu-font-family gvim
+  sudo pacman -S xorg-xbacklight yarn zsh
+  sudo pacman -S yaourt morc_menu bmenu
   # sudo pacman -S dmenu
-  # sudo pacman -S i3
+  # sudo pacman -S i3-gaps
+
+  # ============Extras=============
+  sudo pacman -S chromium calibre pamac pinta redshift rsync wavemon zeal
 
   echo 'Installing yaourt packages'
   # yaourt -S franz-bin
