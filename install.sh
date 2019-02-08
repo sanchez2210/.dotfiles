@@ -48,6 +48,69 @@ handle_file_ln() {
 }
 
 main() {
+  echo 'Setting keyboard'
+  loadkeys uk
+
+  echo 'Update the System Clock'
+  timedatectl set-ntp true
+  timedatectl set-timezone America/Lima
+
+  echo 'Create Partition Table'
+  parted /dev/sda mklabel gbt
+  mount -a
+
+  echo 'Create EFI Partition'
+  parted /dev/sda mkpart primary fat32 1MiB 551MiB
+  parted /dev/sda set 1 esp on
+  mkf2.fat -F32 /dev/sda1
+
+  echo 'Create Swap Partition'
+  parted /dev/sda mkpart primary linux-swap 551MiB 6.5GiB
+
+  echo 'Initialize swap'
+  mkswap /dev/sda2
+  swapon /dev/sda2
+
+  echo 'Create Ext4 Partition'
+  parted /dev/sda mkpart primary ext4 6.5GiB 100%
+  mkf2.ext4 /dev/sda3
+
+  echo 'Mount system partition to /mnt'
+  mount /dev/sda3 /mnt
+
+  echo 'Install base system'
+  pacstrap /mnt/base
+
+  ########## CONFIGURING SYSTEM #############
+  genfstab -U /mnt >> /mnt/etc/fstab
+
+  arch-chroot /mnt
+
+  # Time
+  ln -sf /usr/share/zoneinfo/America/Lima /etc/localtime
+  hwclock --systohc
+
+  # Locatization
+  locale-gen
+
+  echo "KEYMAP=uk" >> /etc/vconsole.conf
+
+  echo "luis-pc" > /etc/hostname
+  echo "127.0.0.1	localhost" >> /etc/hosts
+  echo "::1		localhost" >> /etc/hosts
+  echo "127.0.1.1	luis-pc.localdomain	luis-pc" >> /etc/hosts
+
+  passwd
+
+  pacman -S grub efibootmgr
+
+  mkdir /efi
+  mount /dev/sda1 /efi
+
+  grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
+  grub-mkconfig -o /boot/grub/grub.cfg
+
+  ######### USER INSTALLATION ##########
 
   echo 'Installing pacman packages'
   sudo pacman -Syyu
@@ -56,17 +119,18 @@ main() {
   sudo pacman -S ttf-ubuntu-font-family gvim
   sudo pacman -S xorg-xbacklight yarn zsh
   sudo pacman -S yaourt morc_menu bmenu
-  # sudo pacman -S dmenu
-  # sudo pacman -S i3-gaps
+  sudo pacman -S dmenu
+  sudo pacman -S i3-gaps
 
   # ============Extras=============
   sudo pacman -S chromium calibre pamac pinta redshift rsync wavemon zeal
+  sudo pacman -S deluge thunar vlc
 
   echo 'Installing yaourt packages'
   # yaourt -S franz-bin
   yaourt -S green-recorder
   yaourt -S heroku-cli
-  # yaourt -S upwork
+  yaourt -S upwork
   yaourt -S postman-bin
   yaourt -S peek
   yaourt -S rcm
@@ -114,7 +178,7 @@ main() {
   echo 'installing nodejs versions'
   zsh -c "asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
   bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-  zsh -c "asdf install nodejs 8.11.2"
+  zsh -c "asdf install nodejs 10.15.0"
 
   # CONFIG
 
