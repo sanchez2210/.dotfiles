@@ -62,7 +62,7 @@ main() {
   echo 'Create EFI Partition'
   parted /dev/sda mkpart primary fat32 1MiB 551MiB
   parted /dev/sda set 1 esp on
-  mkf2.fat -F32 /dev/sda1
+  mkfs.fat -F32 /dev/sda1
 
   echo 'Create Swap Partition'
   parted /dev/sda mkpart primary linux-swap 551MiB 6.5GiB
@@ -73,13 +73,13 @@ main() {
 
   echo 'Create Ext4 Partition'
   parted /dev/sda mkpart primary ext4 6.5GiB 100%
-  mkf2.ext4 /dev/sda3
+  mkfs.ext4 /dev/sda3
 
   echo 'Mount system partition to /mnt'
   mount /dev/sda3 /mnt
 
   echo 'Install base system'
-  pacstrap /mnt/base
+  pacstrap /mnt base
 
   ########## CONFIGURING SYSTEM #############
   genfstab -U /mnt >> /mnt/etc/fstab
