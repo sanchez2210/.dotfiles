@@ -17,6 +17,8 @@
 + Downloads/**
 + Documents/
 + Documents/**
++ bin/
++ bin/**
 + Calibre Library/
 + Calibre Library/**
 + VirtualBox VMs/
