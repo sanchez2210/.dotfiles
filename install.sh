@@ -115,12 +115,11 @@ main() {
   echo 'Installing pacman packages'
   sudo pacman -Syyu
   sudo pacman -S diff-so-fancy firefox flameshot fzf git
-  sudo pacman -S postgresql imagemagick the_silver_searcher tmux
+  sudo pacman -S the_silver_searcher
   sudo pacman -S ttf-ubuntu-font-family gvim
-  sudo pacman -S xorg-xbacklight yarn zsh
-  sudo pacman -S morc_menu bmenu
+  sudo pacman -S xorg-xbacklight zsh
   sudo pacman -S dmenu
-  sudo pacman -S i3-gaps rsync xorg
+  sudo pacman -S i3-gaps rsync xorg rxvt-unicode networkmanager
 
   echo 'Installing yaourt'
   # yaourt installation

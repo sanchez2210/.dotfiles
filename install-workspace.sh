@@ -1,6 +1,7 @@
 main() {
-  sudo pacman -S chromium calibre pamac pinta redshift wavemon zeal
-  sudo pacman -S deluge thunar vlc
+  sudo pacman -S postgresql chromium calibre pamac pinta redshift wavemon zeal
+  sudo pacman -S deluge thunar vlc imagemagick tmux yarn
+  sudo pacman -S morc_menu bmenu
 
   echo 'Installing yaourt packages'
   # yaourt -S franz-bin
