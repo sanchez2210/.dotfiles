@@ -51,19 +51,29 @@ main() {
   ######### USER INSTALLATION ##########
 
   echo 'Installing pacman packages'
-  sudo pacman -Syyu
-  sudo pacman -S diff-so-fancy firefox flameshot fzf git
-  sudo pacman -S the_silver_searcher
-  sudo pacman -S ttf-ubuntu-font-family gvim
-  sudo pacman -S xorg-xbacklight zsh
-  sudo pacman -S dmenu
-  sudo pacman -S i3-gaps rsync xorg rxvt-unicode networkmanager
+  pacman -Syyu sudo networkmanager git gvim xorg
+
+  useradd -m luis
+  passwd luis
+
+  # TODO: login as luis user
+
+  sudo pacman -S xorg-xbacklight zsh udisks2 alsa-utils
+  sudo pacman -S dmenu pulseaudio pavucontrol
+  sudo pacman -S i3-gaps rsync rxvt-unicode
 
   echo 'Installing yaourt'
-  # yaourt installation
+  git clone https://aur.archlinux.org/package-query.git
+  cd package-query
+  makepkg -si
+  cd ..
+  git clone https://aur.archlinux.org/yaourt.git
+  cd yaourt
+  makepkg -si
+  cd ..
 
   echo 'Installing yaourt packages'
-  yaourt -S ly-git rcm
+  yaourt -S --noconfirm rcm pamac-aur
 
   # zsh
   echo 'Making Zsh default shell'
@@ -93,6 +103,17 @@ main() {
 
   # Vim plugins
   vim +PluginInstall +qall
+
+  cd /etc/fonts/conf.d/
+  sudo rm /etc/fonts/conf.d/10*
+  sudo rm -rf 70-no-bitmaps.conf
+  sudo ln -s ../conf.avail/70-yes-bitmaps.conf
+
+  cd ~
+  mkdir .local/share/fonts
+
+  ln -fs ~/Fonts/scientifica/regular/scientifica-11.bdf ~/.local/share/fonts/scientifica-11.bdf
+  ln -fs ~/Fonts/scientifica/bold/scientificaBold-11.bdf ~/.local/share/fonts/scientificaBold-11.bdf
 }
 
 main

@@ -1,15 +1,14 @@
 main() {
-  sudo pacman -S postgresql chromium calibre pamac pinta redshift wavemon zeal
+  sudo pacman -S ttf-ubuntu-font-family
+  sudo pacman -S the_silver_searcher zsh-syntax-highlighting
+  sudo pacman -S diff-so-fancy firefox flameshot fzf
+  sudo pacman -S postgresql chromium calibre pinta redshift wavemon zeal
   sudo pacman -S deluge thunar vlc imagemagick tmux yarn
-  sudo pacman -S morc_menu bmenu
+  sudo pacman -S morc_menu bmenu autojump redis unzip nitrogen
 
   echo 'Installing yaourt packages'
   # yaourt -S franz-bin
-  yaourt -S green-recorder
-  yaourt -S heroku-cli
-  yaourt -S upwork
-  yaourt -S postman-bin
-  yaourt -S peek
+  yaourt -S green-recorder heroku-cli upwork postman-bin peek --noconfirm
 
   # asdf
   echo 'Installing asdf'
