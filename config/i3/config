@@ -27,23 +27,26 @@ font xft:Ubuntu 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
-
+bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
+# uebs
+bindsym $mod+ctrl+h exec xterm -e 'uebs memo'
+bindsym $mod+ctrl+k exec xterm -e 'uebs start'
+bindsym $mod+ctrl+j exec xterm -e 'uebs stop'
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
 exec --no-startup-id volumeicon
-####bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+bindsym $mod+Ctrl+a exec xterm -e 'alsamixer'
 exec --no-startup-id pulseaudio --start
 #exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol

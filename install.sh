@@ -61,6 +61,7 @@ main() {
   sudo pacman -S xorg-xbacklight zsh udisks2 alsa-utils
   sudo pacman -S dmenu pulseaudio pavucontrol
   sudo pacman -S i3-gaps rsync rxvt-unicode
+  sudo pacman -S bc
 
   echo 'Installing yaourt'
   git clone https://aur.archlinux.org/package-query.git
@@ -73,7 +74,7 @@ main() {
   cd ..
 
   echo 'Installing yaourt packages'
-  yaourt -S --noconfirm rcm pamac-aur
+  yaourt -S --noconfirm rcm pamac-aur nvidia-beta
 
   # zsh
   echo 'Making Zsh default shell'

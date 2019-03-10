@@ -40,3 +40,5 @@
 !
 URxvt.font:xft:scientifica:size=14
 URxvt.letterSpace:  1
+
+URxvt*iso14755: False
