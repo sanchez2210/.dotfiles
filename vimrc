@@ -26,11 +26,10 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
 endif
 
 " Colors and theme options
-colorscheme space-vim-dark
-hi Comment guifg=#5C6370 ctermfg=59
-hi Normal     ctermbg=NONE guibg=NONE
-hi LineNr     ctermbg=NONE guibg=NONE
-hi SignColumn ctermbg=NONE guibg=NONE
+"
+colorscheme gotham
+set termguicolors
+" hi Comment guifg=#5C6370 ctermfg=59
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
