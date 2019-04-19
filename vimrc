@@ -26,8 +26,11 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
 endif
 
 " Colors and theme options
-set background=dark
-colorscheme jellybeans
+colorscheme space-vim-dark
+hi Comment guifg=#5C6370 ctermfg=59
+hi Normal     ctermbg=NONE guibg=NONE
+hi LineNr     ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -96,6 +99,7 @@ if executable('ag')
 endif
 
 nnoremap <C-p> :Files<CR>
+nnoremap <A-p> :History<CR>
 
 " Make it obvious where 80 characters es
 set textwidth=80
