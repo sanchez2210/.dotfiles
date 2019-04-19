@@ -3,7 +3,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/luis/.oh-my-zsh
+export ZSH=/home/luis/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -56,6 +56,7 @@ plugins=(git rails bundler ruby tmuxinator autojump)
 
 source $ZSH/oh-my-zsh.sh
 
+. $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
 # User configuration
