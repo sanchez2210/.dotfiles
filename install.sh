@@ -60,7 +60,7 @@ main() {
 
   sudo pacman -S xorg-xbacklight zsh udisks2 alsa-utils
   sudo pacman -S dmenu pulseaudio pavucontrol
-  sudo pacman -S i3-gaps rsync rxvt-unicode
+  sudo pacman -S i3-gaps rsync
   sudo pacman -S bc
 
   echo 'Installing yaourt'
@@ -79,6 +79,8 @@ main() {
   # zsh
   echo 'Making Zsh default shell'
   chsh -s $(which zsh)
+
+  # TODO: Setup system notifications and timesyncdaemon
 
   # oh-my-zsh
   echo 'Installing Oh-My-Zsh'
@@ -113,8 +115,8 @@ main() {
   cd ~
   mkdir .local/share/fonts
 
-  ln -fs ~/Fonts/scientifica/regular/scientifica-11.bdf ~/.local/share/fonts/scientifica-11.bdf
-  ln -fs ~/Fonts/scientifica/bold/scientificaBold-11.bdf ~/.local/share/fonts/scientificaBold-11.bdf
+  # ln -fs ~/Fonts/scientifica/regular/scientifica-11.bdf ~/.local/share/fonts/scientifica-11.bdf
+  # ln -fs ~/Fonts/scientifica/bold/scientificaBold-11.bdf ~/.local/share/fonts/scientificaBold-11.bdf
 }
 
 main
