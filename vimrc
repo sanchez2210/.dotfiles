@@ -25,11 +25,18 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
+
 " Colors and theme options
 "
-colorscheme gotham
+colorscheme jellybeans
 set termguicolors
-" hi Comment guifg=#5C6370 ctermfg=59
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -81,6 +88,8 @@ set expandtab
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
+
+set cursorline
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
