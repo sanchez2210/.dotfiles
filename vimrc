@@ -95,8 +95,6 @@ set expandtab
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
-set cursorline
-
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
@@ -109,9 +107,6 @@ if executable('ag')
     nnoremap \ :Ag<SPACE>
   endif
 endif
-
-nnoremap <C-p> :Files<CR>
-nnoremap <A-p> :History<CR>
 
 " Make it obvious where 80 characters es
 set textwidth=80
@@ -193,6 +188,11 @@ let g:user_emmet_leader_key='<C-\>'
 
 " Enable mouse mode
 set mouse=a
+
+set cursorline
+
+nnoremap <C-p> :Files<CR>
+nnoremap <A-p> :History<CR>
 
 " Move lines up and down
 nnoremap <M-j> :m .+1<CR>==
