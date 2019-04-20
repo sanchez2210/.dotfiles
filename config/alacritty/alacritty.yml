@@ -86,7 +86,7 @@ font:
       # - (macOS) Menlo
       # - (Linux) Terminus
       # - (Windows) Consolas
-    family: Monaco
+    family: Hack Nerd Font
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -161,14 +161,6 @@ colors:
     background: '0x000000'
     foreground: '0xa8a8a8'
 
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '0x9a9a9a'
-    #bright_foreground: '0xffffff'
-
   # Normal colors
   normal:
     black:   '0x000000'
@@ -190,6 +182,14 @@ colors:
     magenta: '0xf854f8'
     cyan:    '0x50fcf8'
     white:   '0xf8fcf8'
+
+  # Bright and dim foreground colors
+  #
+  # The dimmed foreground color is calculated automatically if it is not present.
+  # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+  # is `false`, the normal foreground color will be used.
+  #dim_foreground: '0x9a9a9a'
+  #bright_foreground: '0xffffff'
 
   # Cursor colors
   #
