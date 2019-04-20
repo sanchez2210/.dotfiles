@@ -105,7 +105,9 @@ if executable('ag')
   " Use ag in FZF for listing files. Lightning fast and respects .gitignore
   let $FZF_DEFAULT_COMMAND = 'ag --ignore .git --hidden -g ""'
 
-  nnoremap \ :Ag<SPACE>
+  if !exists(":Ag")
+    nnoremap \ :Ag<SPACE>
+  endif
 endif
 
 nnoremap <C-p> :Files<CR>
