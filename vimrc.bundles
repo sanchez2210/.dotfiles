@@ -33,17 +33,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 Plug 'Yggdroot/indentLine'
-Plug 'flazz/vim-colorschemes'
-Plug 'twe4ked/vim-colorscheme-switcher'
+
+" For color hunting
+" Plug 'flazz/vim-colorschemes'
+" Plug 'twe4ked/vim-colorscheme-switcher'
+"
 if g:has_async
   Plug 'w0rp/ale'
 endif
 
 " All of your Plugins must be added before the following line
 call plug#end()
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
