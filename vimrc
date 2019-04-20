@@ -1,3 +1,5 @@
+set encoding=utf-8
+
 " Leader
 let mapleader = " "
 
@@ -5,10 +7,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
 endif
 
 set backspace=2   " backspace deletes like most programs in insert mode
@@ -31,6 +29,9 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
 
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
