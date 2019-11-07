@@ -8,7 +8,12 @@ export ZSH=/home/luis/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="re5et"
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs newline status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,7 +57,7 @@ ZSH_THEME="re5et"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails bundler ruby tmuxinator autojump)
+plugins=(git rails bundler tmuxinator autojump)
 
 source $ZSH/oh-my-zsh.sh
 
