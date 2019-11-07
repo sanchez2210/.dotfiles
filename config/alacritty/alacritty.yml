@@ -86,7 +86,8 @@ font:
       # - (macOS) Menlo
       # - (Linux) Terminus
       # - (Windows) Consolas
-    family: Hack Nerd Font
+    family: Misc Fixed
+    # family: -Misc-Fixed-Medium-R-Semicondensed--13-120-75-75-C-60-ISO10646-1
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -114,7 +115,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 9
+  size: 10
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -154,34 +155,34 @@ persistent_logging: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
+# Colors (Dracula)
 colors:
   # Default colors
   primary:
-    background: '0x000000'
-    foreground: '0xa8a8a8'
+    background: '0x282a36'
+    foreground: '0xf8f8f2'
 
   # Normal colors
   normal:
     black:   '0x000000'
-    red:     '0xa80000'
-    green:   '0x00a800'
-    yellow:  '0xa85400'
-    blue:    '0x0000a8'
-    magenta: '0xa800a8'
-    cyan:    '0x00a8a8'
-    white:   '0xa8a8a8'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xcaa9fa'
+    magenta: '0xff79c6'
+    cyan:    '0x8be9fd'
+    white:   '0xbfbfbf'
 
   # Bright colors
   bright:
-    black:   '0x545054'
-    red:     '0xf85450'
-    green:   '0x50fc50'
-    yellow:  '0xf8fc50'
-    blue:    '0x5054f8'
-    magenta: '0xf854f8'
-    cyan:    '0x50fcf8'
-    white:   '0xf8fcf8'
+    black:   '0x575b70'
+    red:     '0xff6e67'
+    green:   '0x5af78e'
+    yellow:  '0xf4f99d'
+    blue:    '0xcaa9fa'
+    magenta: '0xff92d0'
+    cyan:    '0x9aedfe'
+    white:   '0xe6e6e6'
 
   # Bright and dim foreground colors
   #
