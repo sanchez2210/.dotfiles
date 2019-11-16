@@ -64,18 +64,13 @@ main() {
   sudo pacman -S i3-gaps rsync
   sudo pacman -S bc
 
-  echo 'Installing yaourt'
-  git clone https://aur.archlinux.org/package-query.git
-  cd package-query
+  echo 'Installing yay'
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
   makepkg -si
-  cd ..
-  git clone https://aur.archlinux.org/yaourt.git
-  cd yaourt
-  makepkg -si
-  cd ..
 
-  echo 'Installing yaourt packages'
-  yaourt -S --noconfirm rcm pamac-aur nvidia-beta
+  echo 'Installing yay packages'
+  yay -S --noconfirm rcm pamac-aur nvidia-beta
 
   # zsh
   echo 'Making Zsh default shell'
