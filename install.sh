@@ -76,6 +76,8 @@ main() {
   echo 'Making Zsh default shell'
   chsh -s $(which zsh)
 
+  # nmcli connection modify *connection_name* ipv6.ip6-privacy 2
+
   # TODO: Setup system notifications and timesyncdaemon
 
   # oh-my-zsh
