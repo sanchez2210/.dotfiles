@@ -5,10 +5,16 @@ main() {
   sudo pacman -S postgresql chromium calibre pinta redshift wavemon zeal
   sudo pacman -S deluge thunar vlc imagemagick tmux yarn notification-daemon
   sudo pacman -S morc_menu bmenu autojump redis unzip nitrogen xdotool libnotify
+  sudo pacman -S xorg-fonts-misc xautolock kdeconnect zsh-theme-powerlevel9k
 
-  echo 'Installing yaourt packages'
+  # lulz
+  # sudo pacman -S cowsay fortune-mod
+  # gem install artiik
+
+  echo 'Installing yay packages'
   # yaourt -S franz-bin
-  yaourt -S green-recorder heroku-cli upwork postman-bin peek --noconfirm
+  yay -S green-recorder heroku-cli upwork postman-bin peek prismatik --noconfirm
+  yay -S radarr --noconfirm
 
   # asdf
   echo 'Installing asdf'
