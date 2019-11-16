@@ -60,6 +60,7 @@ main() {
 
   sudo pacman -S xorg-xbacklight zsh udisks2 alsa-utils
   sudo pacman -S dmenu pulseaudio pavucontrol
+  sudo pacman -S pulseaudio-bluetooth blueman bluez-utils pulseaudio-alsa
   sudo pacman -S i3-gaps rsync
   sudo pacman -S bc
 
