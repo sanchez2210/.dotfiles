@@ -7,30 +7,30 @@ call plug#begin('~/.vim/plugged')
 
 " Define bundles via Github repos
 Plug 'airblade/vim-gitgutter'
+Plug 'AndrewRadev/ember_tools.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ecomba/vim-ruby-refactoring'
-Plug 'elixir-editors/vim-elixir'
-Plug 'guns/vim-sexp'
 Plug 'janko-m/vim-test'
+Plug 'JarrodCTaylor/vim-ember-cli-test-runner'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'posva/vim-vue'
-Plug 'slim-template/vim-slim'
+Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent dir before writing the buffer
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch' " Dispatch async processes
+Plug 'tpope/vim-dadbod' " Interact with the db  
+Plug 'tpope/vim-endwise' " Adds 'end' automatically in Ruby
+Plug 'tpope/vim-eunuch' " UNIX Helpers like :Delete :Mkdir :Rename etc
+Plug 'tpope/vim-fugitive' " Git wrapper
+Plug 'tpope/vim-projectionist' " Jump between files (I think)
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-repeat' " IDK Why this is needed but keep it
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/tComment'
 Plug 'Yggdroot/indentLine'
 Plug 'sanchez2210/jellybeans.vim' " Shameless.. plug

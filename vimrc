@@ -40,8 +40,11 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+let g:airline_powerline_fonts = 1
+"
 " Colors and theme options
 "
+let g:jellybeans_overrides = { 'background': { 'guibg': '050505' } }
 colorscheme jellybeans
 set termguicolors
 
@@ -75,14 +78,8 @@ augroup ale
   autocmd!
 
   if g:has_async
-    autocmd VimEnter *
-      \ set updatetime=1000 |
-      \ let g:ale_lint_on_text_changed = 0
+    let g:ale_lint_on_text_changed = 0
     let g:ale_set_signs = 0 " This avoids ale signs to overwrite gitgutter's
-    autocmd CursorHold * call ale#Queue(0)
-    autocmd CursorHoldI * call ale#Queue(0)
-    autocmd InsertEnter * call ale#Queue(0)
-    autocmd InsertLeave * call ale#Queue(0)
   else
     echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
   endif
@@ -119,7 +116,7 @@ endif
 
 " Make it obvious where 80 characters es
 set textwidth=80
-set colorcolumn=+1
+set colorcolumn=81
 
 " Numbers
 set number
@@ -213,3 +210,9 @@ vnoremap <M-k> :m '<-2<CR>gv=gv
 
 " Auto source .vimrc
 autocmd bufwritepost .vimrc source $MYVIMRC
+
+" Test strategy
+" let test#strategy = "dispatch"
+let g:airline_section_b = ''
+
+:nnoremap <F8> :setl noai nocin nosi inde=<CR>
