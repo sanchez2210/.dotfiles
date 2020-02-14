@@ -50,7 +50,7 @@ main(){
   arch-chroot /mnt hwclock --systohc
 
   echo 'Generate locale'
-  sed -i "s/#en_US\.UTF-8 UTF-8/en_US\.UTF-8 UTF-8/" >> /mnt/etc/locale.gen
+  sed -i "s/#en_US\.UTF-8 UTF-8/en_US\.UTF-8 UTF-8/" /mnt/etc/locale.gen
   arch-chroot /mnt locale-gen
 
   # Create the locale.conf(5) file, and set the LANG variable accordingly:
