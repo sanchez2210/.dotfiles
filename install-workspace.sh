@@ -9,7 +9,7 @@ main() {
 
   echo 'Installing yay packages'
   # yay -Syu franz-bin
-  yay -Syu green-recorder charles heroku-cli upwork postman-bin peek --noconfirm
+  yay -Syu green-recorder charles heroku-cli upwork postman-bin peek nerd-fonts-complete --noconfirm
 
   # asdf
   echo 'Installing asdf'
