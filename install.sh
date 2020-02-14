@@ -95,7 +95,7 @@ main() {
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
   #
-  vim +PluginInstall +qall
+  vim +PlugInstall +qall
 
   cd /etc/fonts/conf.d/
   sudo rm /etc/fonts/conf.d/10*
