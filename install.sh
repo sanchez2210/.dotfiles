@@ -58,11 +58,11 @@ main() {
 
   # TODO: login as luis user
 
-  sudo pacman -S xorg-xbacklight zsh udisks2 alsa-utils
-  sudo pacman -S dmenu pulseaudio pavucontrol
-  sudo pacman -S pulseaudio-bluetooth blueman bluez-utils pulseaudio-alsa
-  sudo pacman -S i3-gaps rsync
-  sudo pacman -S bc
+  sudo pacman -Syu xorg-xbacklight zsh udisks2 alsa-utils
+  sudo pacman -Syu dmenu pulseaudio pavucontrol
+  sudo pacman -Syu pulseaudio-bluetooth blueman bluez-utils pulseaudio-alsa
+  sudo pacman -Syu i3-gaps rsync
+  sudo pacman -Syu bc
 
   echo 'Installing yay'
   git clone https://aur.archlinux.org/yay.git
@@ -70,7 +70,7 @@ main() {
   makepkg -si
 
   echo 'Installing yay packages'
-  yay -S --noconfirm rcm pamac-aur nvidia-beta
+  yay -Syu --noconfirm rcm pamac-aur nvidia-beta
 
   # zsh
   echo 'Making Zsh default shell'
