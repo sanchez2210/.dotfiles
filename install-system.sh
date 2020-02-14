@@ -39,8 +39,8 @@ main(){
   mkdir /mnt/efi
   mount /dev/sda1 /mnt/efi
 
-  echo 'Install base system'
-  pacstrap /mnt base
+  echo 'Install base system + vim'
+  pacstrap /mnt base vim
 
   ########## CONFIGURING SYSTEM #############
   genfstab -U /mnt >> /mnt/etc/fstab
