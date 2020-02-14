@@ -1,6 +1,13 @@
 main(){
   echo 'Setting keyboard'
-  loadkeys uk
+  loadkeys us
+
+  # Connect to the internet
+  # ip link
+
+  # iwd + dchpcd if wireless
+
+  # ping 8.8.8.8
 
   echo 'Update the System Clock'
   timedatectl set-ntp true
@@ -49,7 +56,11 @@ main(){
   echo "en_US.UTF-8 UTF-8  " >> /etc/locale.gen
   locale-gen
 
-  echo "KEYMAP=uk" >> /etc/vconsole.conf
+  # Create the locale.conf(5) file, and set the LANG variable accordingly:
+  echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
+  # If you set the keyboard layout, make the changes persistent in vconsole.conf(5):
+  echo "KEYMAP=us" >> /etc/vconsole.conf
 
   echo "luis-pc" > /etc/hostname
   echo "127.0.0.1	localhost" >> /etc/hosts
