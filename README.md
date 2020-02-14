@@ -1,6 +1,10 @@
 # .dotfiles
 
-Full install script:
+OS install:
+
+```$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/sanchez2210/.dotfiles/master/install-system.sh)"```
+
+Basics install:
 
 ```$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/sanchez2210/.dotfiles/master/install.sh)"```
 
