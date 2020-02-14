@@ -39,47 +39,40 @@ main(){
   mkdir /mnt/efi
   mount /dev/sda1 /mnt/efi
 
-  echo 'Install base system + gvim'
-  pacstrap /mnt base gvim
+  echo 'Install base system + some'
+  pacstrap /mnt base gvim grub efibootmgr
 
   ########## CONFIGURING SYSTEM #############
   genfstab -U /mnt >> /mnt/etc/fstab
 
-  echo 'Change Root'
-  arch-chroot /mnt
-
-  # Time
   echo 'Set Time'
-  ln -sf /usr/share/zoneinfo/America/Lima /etc/localtime
-  hwclock --systohc
+  arch-chroot /mnt ln -sf /usr/share/zoneinfo/America/Lima /etc/localtime
+  arch-chroot /mnt hwclock --systohc
 
   echo 'Generate locale'
-  # Locatization
-  echo "en_US.UTF-8 UTF-8  " >> /etc/locale.gen
-  locale-gen
+  sed -i "s/#en_US\.UTF-8 UTF-8/en_US\.UTF-8 UTF-8/" >> /mnt/etc/locale.gen
+  arch-chroot /mnt locale-gen
 
-  echo 'Set LANG'
   # Create the locale.conf(5) file, and set the LANG variable accordingly:
-  echo "LANG=en_US.UTF-8" > /etc/locale.conf
+  echo 'Set LANG'
+  echo "LANG=en_US.UTF-8" > /mnt/etc/locale.conf
 
-  echo 'Persist Keyboard'
   # If you set the keyboard layout, make the changes persistent in vconsole.conf(5):
-  echo "KEYMAP=us" >> /etc/vconsole.conf
+  echo 'Persist Keyboard'
+  echo "KEYMAP=us" >> /mnt/etc/vconsole.conf
 
   echo 'Set hostname'
-  echo "luis-pc" > /etc/hostname
+  echo "luis-lap" > /mnt/etc/hostname
 
-  echo "127.0.0.1	localhost" >> /etc/hosts
-  echo "::1		localhost" >> /etc/hosts
-  echo "127.0.1.1	luis-pc.localdomain	luis-pc" >> /etc/hosts
+  echo "127.0.0.1	localhost" >> /mnt/etc/hosts
+  echo "::1		localhost" >> /mnt/etc/hosts
+  echo "127.0.1.1	luis-lap.localdomain	luis-lap" >> /mnt/etc/hosts
 
-  passwd
-
-  pacman -S grub efibootmgr
+  arch-chroot /mnt passwd
 
   echo 'Install GRUB'
-  grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
-  grub-mkconfig -o /boot/grub/grub.cfg
+  arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+  arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 main
