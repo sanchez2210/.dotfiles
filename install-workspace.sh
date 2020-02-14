@@ -1,15 +1,15 @@
 main() {
   sudo pacman -Syu ttf-ubuntu-font-family
   sudo pacman -Syu the_silver_searcher zsh-syntax-highlighting
-  sudo pacman -Syu diff-so-fancy firefox flameshot fzf sqlite sqlitebrowser tidy
+  sudo pacman -Syu diff-so-fancy flameshot fzf sqlite sqlitebrowser tidy
   sudo pacman -Syu postgresql chromium
-  sudo pacman -Syu thunar imagemagick tmux yarn notification-daemon
+  sudo pacman -Syu imagemagick tmux yarn notification-daemon
   sudo pacman -Syu morc_menu bmenu autojump redis unzip xdotool libnotify
   sudo pacman -Syu xorg-fonts-misc xautolock kdeconnect zsh-theme-powerlevel9k
 
   echo 'Installing yay packages'
   # yay -Syu franz-bin
-  yay -Syu green-recorder heroku-cli upwork postman-bin peek --noconfirm
+  yay -Syu green-recorder charles heroku-cli upwork postman-bin peek --noconfirm
 
   # asdf
   echo 'Installing asdf'

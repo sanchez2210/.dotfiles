@@ -1,7 +1,6 @@
 main() {
   sudo pacman -Syu calibre pinta redshift wavemon zeal picom
-  sudo pacman -Syu deluge vlc tmux yarn notification-daemon
-  sudo pacman -Syu nitrogen
+  sudo pacman -Syu deluge vlc
 
   # lulz
   # sudo pacman -Syu cowsay fortune-mod
@@ -9,8 +8,7 @@ main() {
 
   echo 'Installing yay packages'
   # yay -Syu franz-bin
-  yay -Syu heroku-cli upwork postman-bin peek --noconfirm
-  yay -Syu radarr charles prismatik green-recorder --noconfirm
+  yay -Syu radarr prismatik green-recorder --noconfirm
 }
 
 main
