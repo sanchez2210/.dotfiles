@@ -15,7 +15,6 @@ main(){
 
   echo 'Create Partition Table'
   parted /dev/sda mklabel gpt
-  mount -a
 
   echo 'Create EFI Partition'
   parted /dev/sda mkpart primary fat32 1MiB 551MiB
