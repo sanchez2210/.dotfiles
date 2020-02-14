@@ -56,7 +56,8 @@ main() {
   useradd -m luis
   passwd luis
 
-  # TODO: login as luis user
+  su luis
+  cd ~
 
   sudo pacman -Syu xorg-xbacklight zsh udisks2 alsa-utils
   sudo pacman -Syu dmenu pulseaudio pavucontrol
@@ -84,7 +85,7 @@ main() {
   echo 'Installing Oh-My-Zsh'
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-  #.dotfiles
+ r#.dotfiles
   echo 'Installing dotfiles'
   git clone https://github.com/sanchez2210/.dotfiles ~/.dotfiles
 
@@ -102,7 +103,7 @@ main() {
   echo 'Installing Vundle'
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-  # Vim plugins
+  #
   vim +PluginInstall +qall
 
   cd /etc/fonts/conf.d/
