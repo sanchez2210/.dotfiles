@@ -33,7 +33,6 @@ main(){
   parted /dev/sda mkpart primary ext4 6.5GiB 100%
   mkfs.ext4 /dev/sda3
 
-  mkdir /mnt
   mkdir /mnt/efi
 
   echo 'Mount partitions'
