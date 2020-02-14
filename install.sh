@@ -51,7 +51,7 @@ main() {
   ######### USER INSTALLATION ##########
 
   echo 'Installing pacman packages'
-  pacman -Syyu sudo networkmanager git gvim xorg
+  pacman -Syyu sudo git gvim xorg
 
   useradd -m luis
   passwd luis

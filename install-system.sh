@@ -40,7 +40,7 @@ main(){
   mount /dev/sda1 /mnt/efi
 
   echo 'Install base system + some'
-  pacstrap /mnt base linux linux-firmware gvim grub efibootmgr intel-ucode amd-ucode
+  pacstrap /mnt base linux linux-firmware gvim grub efibootmgr intel-ucode amd-ucode networkmanager
 
   ########## CONFIGURING SYSTEM #############
   genfstab -U /mnt >> /mnt/etc/fstab
