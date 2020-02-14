@@ -49,7 +49,7 @@ handle_file_ln() {
 
 main() {
   echo 'Installing pacman packages'
-  sudo pacman -Syyu xorg xorg-init xorg-twm xorg-xbacklight zsh udisks2 alsa-utils dmenu pulseaudio pavucontrol pulseaudio-bluetooth blueman bluez-utils pulseaudio-alsa i3-gaps rsync bc xterm
+  sudo pacman -Syyu xorg xorg-init xorg-twm xorg-xbacklight zsh udisks2 alsa-utils dmenu pulseaudio pavucontrol pulseaudio-bluetooth blueman bluez-utils pulseaudio-alsa i3-gaps rsync bc xterm alacritty network-manager-applet reflector
 
   echo 'Installing yay'
   git clone https://aur.archlinux.org/yay.git
@@ -67,6 +67,9 @@ main() {
   # zsh
   echo 'Making Zsh default shell'
   chsh -s $(which zsh)
+
+
+  # reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
   # nmcli connection modify *connection_name* ipv6.ip6-privacy 2
 
