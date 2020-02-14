@@ -69,6 +69,7 @@ main(){
   echo "127.0.1.1	luis-lap.localdomain	luis-lap" >> /mnt/etc/hosts
 
   arch-chroot /mnt passwd
+  arch-chroot /mnt systemctl enable NetworkManager.service
 
   echo 'Install GRUB'
   arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
