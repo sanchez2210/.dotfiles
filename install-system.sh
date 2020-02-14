@@ -40,7 +40,7 @@ main(){
   mount /dev/sda1 /mnt/efi
 
   echo 'Install base system + some'
-  pacstrap /mnt base linux linux-firmware gvim grub efibootmgr intel-ucode amd-ucode networkmanager
+  pacstrap /mnt base linux linux-firmware gvim grub efibootmgr intel-ucode amd-ucode networkmanager sudo git
 
   ########## CONFIGURING SYSTEM #############
   genfstab -U /mnt >> /mnt/etc/fstab
@@ -70,6 +70,11 @@ main(){
 
   arch-chroot /mnt passwd
   arch-chroot /mnt systemctl enable NetworkManager.service
+
+  ######### USER INSTALLATION ##########
+
+  arch-chroot /mnt useradd -m luis
+  arch-chroot /mnt passwd luis
 
   echo 'Install GRUB'
   arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB

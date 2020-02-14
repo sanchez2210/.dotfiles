@@ -48,22 +48,8 @@ handle_file_ln() {
 }
 
 main() {
-  ######### USER INSTALLATION ##########
-
   echo 'Installing pacman packages'
-  pacman -Syyu sudo git gvim xorg
-
-  useradd -m luis
-  passwd luis
-
-  su luis
-  cd ~
-
-  sudo pacman -Syu xorg-xbacklight zsh udisks2 alsa-utils
-  sudo pacman -Syu dmenu pulseaudio pavucontrol
-  sudo pacman -Syu pulseaudio-bluetooth blueman bluez-utils pulseaudio-alsa
-  sudo pacman -Syu i3-gaps rsync
-  sudo pacman -Syu bc
+  sudo pacman -Syyu xorg xorg-xbacklight zsh udisks2 alsa-utils dmenu pulseaudio pavucontrol pulseaudio-bluetooth blueman bluez-utils pulseaudio-alsa i3-gaps rsync bc
 
   echo 'Installing yay'
   git clone https://aur.archlinux.org/yay.git
