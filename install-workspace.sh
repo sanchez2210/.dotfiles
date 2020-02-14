@@ -31,10 +31,10 @@ main() {
 
   # Postgresql
   echo 'Postgresql configuration'
-  sudo -u postgres initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
+  sudo runuser postgres -c "initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'"
   systemctl start postgresql.service
   systemctl enable postgresql.service
-  sudo -u postgres createuser --interactive
+  sudo runuser postgres -c "createuser --interactive"
 
   # git
   echo 'Git configuration'
