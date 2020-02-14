@@ -2,19 +2,14 @@ main() {
   sudo pacman -S ttf-ubuntu-font-family
   sudo pacman -S the_silver_searcher zsh-syntax-highlighting
   sudo pacman -S diff-so-fancy firefox flameshot fzf sqlite sqlitebrowser tidy
-  sudo pacman -S postgresql chromium calibre pinta redshift wavemon zeal picom
-  sudo pacman -S deluge thunar vlc imagemagick tmux yarn notification-daemon
-  sudo pacman -S morc_menu bmenu autojump redis unzip nitrogen xdotool libnotify
+  sudo pacman -S postgresql chromium
+  sudo pacman -S thunar imagemagick tmux yarn notification-daemon
+  sudo pacman -S morc_menu bmenu autojump redis unzip xdotool libnotify
   sudo pacman -S xorg-fonts-misc xautolock kdeconnect zsh-theme-powerlevel9k
 
-  # lulz
-  # sudo pacman -S cowsay fortune-mod
-  # gem install artiik
-
   echo 'Installing yay packages'
-  # yaourt -S franz-bin
-  yay -S green-recorder heroku-cli upwork postman-bin peek prismatik --noconfirm
-  yay -S radarr --noconfirm
+  # uay -S franz-bin
+  yay -S green-recorder heroku-cli upwork postman-bin peek --noconfirm
 
   # asdf
   echo 'Installing asdf'
