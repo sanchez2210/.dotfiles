@@ -1,16 +1,16 @@
 main() {
-  sudo pacman -S calibre pinta redshift wavemon zeal picom
-  sudo pacman -S deluge vlc tmux yarn notification-daemon
-  sudo pacman -S nitrogen
+  sudo pacman -Syu calibre pinta redshift wavemon zeal picom
+  sudo pacman -Syu deluge vlc tmux yarn notification-daemon
+  sudo pacman -Syu nitrogen
 
   # lulz
-  # sudo pacman -S cowsay fortune-mod
+  # sudo pacman -Syu cowsay fortune-mod
   # gem install artiik
 
   echo 'Installing yay packages'
-  # yay -S franz-bin
-  yay -S heroku-cli upwork postman-bin peek --noconfirm
-  yay -S radarr charles prismatik green-recorder --noconfirm
+  # yay -Syu franz-bin
+  yay -Syu heroku-cli upwork postman-bin peek --noconfirm
+  yay -Syu radarr charles prismatik green-recorder --noconfirm
 }
 
 main
