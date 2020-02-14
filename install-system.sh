@@ -32,10 +32,11 @@ main(){
   parted /dev/sda mkpart primary ext4 6.5GiB 100%
   mkfs.ext4 /dev/sda3
 
-  mkdir /mnt/efi
-
-  echo 'Mount partitions'
+  echo 'Mount Ext4 partition'
   mount /dev/sda3 /mnt
+
+  echo 'Mount EFI partition'
+  mkdir /mnt/efi
   mount /dev/sda1 /mnt/efi
 
   echo 'Install base system'
