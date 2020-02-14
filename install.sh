@@ -57,7 +57,12 @@ main() {
   makepkg -si
 
   echo 'Installing yay packages'
-  yay -Syu --noconfirm rcm pamac-aur nvidia-beta
+  yay -Syu --noconfirm rcm pamac-aur
+
+  # GRAPHICS
+  # yay -Syu --noconfirm nvidia-beta
+  # OR, for Ryzen
+  # sudo pacman -Syu mesa
 
   # zsh
   echo 'Making Zsh default shell'
