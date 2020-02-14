@@ -49,7 +49,7 @@ handle_file_ln() {
 
 main() {
   echo 'Installing pacman packages'
-  sudo pacman -Syyu xorg xorg-init xorg-xbacklight zsh udisks2 alsa-utils dmenu pulseaudio pavucontrol pulseaudio-bluetooth blueman bluez-utils pulseaudio-alsa i3-gaps rsync bc
+  sudo pacman -Syyu xorg xorg-init xorg-twm xorg-xbacklight zsh udisks2 alsa-utils dmenu pulseaudio pavucontrol pulseaudio-bluetooth blueman bluez-utils pulseaudio-alsa i3-gaps rsync bc xterm
 
   echo 'Installing yay'
   git clone https://aur.archlinux.org/yay.git
