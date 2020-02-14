@@ -57,7 +57,7 @@ main(){
   locale-gen
 
   # Create the locale.conf(5) file, and set the LANG variable accordingly:
-  echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+  echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
   # If you set the keyboard layout, make the changes persistent in vconsole.conf(5):
   echo "KEYMAP=us" >> /etc/vconsole.conf
