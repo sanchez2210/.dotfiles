@@ -5,11 +5,12 @@ main() {
   sudo pacman -Syu postgresql chromium
   sudo pacman -Syu imagemagick tmux yarn notification-daemon
   sudo pacman -Syu morc_menu bmenu autojump redis unzip xdotool libnotify
-  sudo pacman -Syu xorg-fonts-misc xautolock kdeconnect zsh-theme-powerlevel9k
+  sudo pacman -Syu xorg-fonts-misc xautolock zsh-theme-powerlevel9k
 
   echo 'Installing yay packages'
   # yay -Syu franz-bin
   yay -Syu green-recorder charles i3-scrot i3lock-fancy-git heroku-cli upwork postman-bin peek nerd-fonts-complete --noconfirm
+  yay -Syu xidlehook --noconfirm
 
   # asdf
   echo 'Installing asdf'

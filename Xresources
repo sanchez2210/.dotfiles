@@ -5,3 +5,5 @@ URxvt.letterSpace:  1
 URxvt*iso14755: False
 
 URxvt.lineSpace: 0
+
+! Xcursor.theme: redglass

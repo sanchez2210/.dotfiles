@@ -1,5 +1,8 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+
+exec --no-startup-id ~/.scripts/multihead.sh
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -44,6 +47,9 @@ bindsym $mod+ctrl+k exec xterm -e 'durt start'
 bindsym $mod+ctrl+j exec xterm -e 'durt stop'
 bindsym $mod+ctrl+i exec xterm -hold -e 'durt stats'
 bindsym $mod+ctrl+u exec xterm -hold -e 'durt stats-all'
+
+# clipboard
+bindsym $mod+c exec clipster -sp
 
 # Screenshot
 bindsym $mod+ctrl+f exec flameshot gui
@@ -280,7 +286,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id i3lock
+bindsym $mod+9 exec --no-startup-id i3lock-fancy -g -- scrot -z -o
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -289,16 +295,12 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+exec --no-startup-id clipster -d
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker i3lock
-exec --no-startup-id /usr/bin/indicator-kdeconnect
-exec --no-startup-id ~/.scripts/multihead.sh
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
+# exec --no-startup-id conky
+exec --no-startup-id xautolock -time 1 -locker 'i3lock-fancy -g -- scrot -z -o'
+# exec_always --no-startup-id fix_xcursor
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
