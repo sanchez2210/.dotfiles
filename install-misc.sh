@@ -1,6 +1,6 @@
 main() {
   sudo pacman -Syu calibre pinta redshift wavemon zeal picom
-  sudo pacman -Syu deluge vlc
+  sudo pacman -Syu deluge vlc xscreensaver
 
   # lulz
   # sudo pacman -Syu cowsay fortune-mod

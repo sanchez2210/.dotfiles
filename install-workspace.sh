@@ -1,5 +1,5 @@
 main() {
-  sudo pacman -Syu ttf-ubuntu-font-family
+  sudo pacman -Syu ttf-ubuntu-font-family i3lock
   sudo pacman -Syu the_silver_searcher zsh-syntax-highlighting
   sudo pacman -Syu diff-so-fancy flameshot fzf sqlite sqlitebrowser tidy
   sudo pacman -Syu postgresql chromium
@@ -9,7 +9,7 @@ main() {
 
   echo 'Installing yay packages'
   # yay -Syu franz-bin
-  yay -Syu green-recorder charles heroku-cli upwork postman-bin peek nerd-fonts-complete --noconfirm
+  yay -Syu green-recorder charles i3-scrot i3lock-fancy-git heroku-cli upwork postman-bin peek nerd-fonts-complete --noconfirm
 
   # asdf
   echo 'Installing asdf'
