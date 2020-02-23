@@ -1,11 +1,6 @@
 main() {
-  sudo pacman -Syu ttf-ubuntu-font-family i3lock
-  sudo pacman -Syu the_silver_searcher zsh-syntax-highlighting
-  sudo pacman -Syu diff-so-fancy flameshot fzf sqlite sqlitebrowser tidy
-  sudo pacman -Syu postgresql chromium
-  sudo pacman -Syu imagemagick tmux yarn notification-daemon
-  sudo pacman -Syu morc_menu bmenu autojump redis unzip xdotool libnotify
-  sudo pacman -Syu xorg-fonts-misc xautolock zsh-theme-powerlevel9k
+  sudo pacman -Syu ttf-ubuntu-font-family i3lock the_silver_searcher zsh-syntax-highlighting diff-so-fancy flameshot fzf sqlite sqlitebrowser tidy
+  sudo pacman -Syu imagemagick tmux yarn postgresql chromium morc_menu bmenu autojump redis unzip xdotool xorg-fonts-misc xautolock zsh-theme-powerlevel9k
 
   echo 'Installing yay packages'
   # yay -Syu franz-bin

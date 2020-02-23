@@ -40,7 +40,7 @@ main(){
   mount /dev/sda1 /mnt/efi
 
   echo 'Install base system + some'
-  pacstrap /mnt base base-devel linux linux-firmware fakeroot gvim grub efibootmgr intel-ucode amd-ucode networkmanager network-manager-applet alacritty sudo git
+  pacstrap /mnt base base-devel linux linux-firmware fakeroot gvim grub efibootmgr intel-ucode amd-ucode networkmanager network-manager-applet alacritty sudo git libnotify notification-daemon
 
   ########## CONFIGURING SYSTEM #############
   genfstab -U /mnt >> /mnt/etc/fstab
@@ -67,6 +67,10 @@ main(){
   echo "127.0.0.1	localhost" >> /mnt/etc/hosts
   echo "::1		localhost" >> /mnt/etc/hosts
   echo "127.0.1.1	luis-lap.localdomain	luis-lap" >> /mnt/etc/hosts
+
+  echo "[D-BUS Service]" > "/mnt/usr/share/dbus-1/services/org.freedesktop.Notifications.service"
+  echo "Name=org.freedesktop.Notifications" >> "/mnt/usr/share/dbus-1/services/org.freedesktop.Notifications.service"
+  echo "Exec=/usr/lib/notification-daemon-1.0/notification-daemon" >> "/mnt/usr/share/dbus-1/services/org.freedesktop.Notifications.service"
 
   arch-chroot /mnt passwd
   arch-chroot /mnt systemctl enable NetworkManager.service
