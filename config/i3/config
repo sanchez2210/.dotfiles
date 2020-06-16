@@ -66,8 +66,8 @@ bindsym $mod+Ctrl+m exec pavucontrol
 ################################################################################################
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp   exec sh $HOME/.scripts/backlight-up.sh
-bindsym XF86MonBrightnessDown exec sh $HOME/.scripts/backlight-down.sh
+# bindsym XF86MonBrightnessUp   exec sh $HOME/.scripts/backlight-up.sh
+# bindsym XF86MonBrightnessDown exec sh $HOME/.scripts/backlight-down.sh
 
 # Sound controls
 bindsym XF86AudioRaiseVolume  exec sh $HOME/.scripts/volume-up.sh
