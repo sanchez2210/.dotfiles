@@ -20,7 +20,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent dir before writing the buffer
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-dispatch' " Dispatch async processes
+" Plug 'tpope/vim-dispatch' " Dispatch async processes
+Plug 'benmills/vimux' " Dispatch alternative for async
 Plug 'tpope/vim-dadbod' " Interact with the db  
 Plug 'tpope/vim-endwise' " Adds 'end' automatically in Ruby
 Plug 'tpope/vim-eunuch' " UNIX Helpers like :Delete :Mkdir :Rename etc
@@ -40,7 +41,7 @@ Plug 'sanchez2210/jellybeans.vim' " Shameless.. plug
 " Plug 'twe4ked/vim-colorscheme-switcher'
 "
 if g:has_async
-  Plug 'w0rp/ale'
+  Plug 'dense-analysis/ale'
 endif
 
 " All of your Plugins must be added before the following line

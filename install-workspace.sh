@@ -1,6 +1,6 @@
 main() {
   sudo pacman -Syu ttf-ubuntu-font-family i3lock the_silver_searcher zsh-syntax-highlighting diff-so-fancy flameshot fzf sqlite sqlitebrowser tidy
-  sudo pacman -Syu imagemagick tmux yarn postgresql chromium morc_menu bmenu autojump redis unzip xdotool xorg-fonts-misc xautolock zsh-theme-powerlevel9k
+  sudo pacman -Syu imagemagick tmux yarn postgresql chromium morc_menu bmenu autojump redis unzip xdotool xorg-fonts-misc xautolock
 
   echo 'Installing yay packages'
   # yay -Syu franz-bin
@@ -42,6 +42,8 @@ main() {
   # Listen
   echo 'Increasing the amount of inotify watchers'
   echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
+
+  # Install powerlevelNk theme
 }
 
 main

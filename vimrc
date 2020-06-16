@@ -90,6 +90,9 @@ augroup ale
   endif
 augroup END
 
+let g:ale_linters = { 'ruby': ['standardrb'] }
+let g:airline#extensions#ale#enabled = 1
+
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
@@ -195,7 +198,7 @@ endw
 set ttimeout ttimeoutlen=50
 
 " Emmet
-let g:user_emmet_leader_key='<C-\>'
+" let g:user_emmet_leader_key='<C-\>'
 
 " Enable mouse mode
 set mouse=a
@@ -217,7 +220,50 @@ vnoremap <M-k> :m '<-2<CR>gv=gv
 autocmd bufwritepost .vimrc source $MYVIMRC
 
 " Test strategy
-" let test#strategy = "dispatch"
+let test#strategy = 'vimux'
+" let test#strategy = 'dispatch'
+" let test#strategy = 'dispatch_background'
+" let test#strategy = 'vimterminal'
+let g:VimuxOrientation = 'h'
+
 let g:airline_section_b = ''
 
 :nnoremap <F8> :setl noai nocin nosi inde=<CR>
+
+" HOTKEYS
+
+" vim-rspec
+" map <leader>jra :call RunAllSpecs()<CR>
+" map <leader>jrf :call RunCurrentSpecFile()<CR>
+" map <leader>jrn :call RunNearestSpec()<CR>
+" map <leader>jrl :call RunLastSpec()<CR>
+" map <leader>jr! :call RunLastFailure()<CR>
+
+" map <leader>eir ogem "rspec-core", :github => "rspec/rspec-core"<CR>gem "rspec-expectations", :github => "rspec/rspec-expectations"<CR>gem "rspec-mocks", :github => "rspec/rspec-mocks"<CR>gem "rspec-support", :github => "rspec/rspec-support"<CR><ESC>
+
+map <leader>eid orequire 'pry'; binding.pry<ESC>
+
+" map <leader>eal :Align & <CR>
+" map <leader>eap :Align => <CR>
+
+map <leader>ert :%s/\t/ /g<CR>
+map <leader>erq :%s/"/'/g<CR>
+
+map <leader>ogf :tabe Gemfile<CR>
+map <leader>ovr :tabe ~/.vimrc<CR>
+
+map <leader>rv :so ~/.vimrc <CR>
+
+map <leader>bi :!bundle install<CR>
+
+map <leader>arp :Ag "^ *p " <CR>
+map <leader>apr :Ag "binding.pry " <CR>
+
+" map <leader>ft zfa
+" map <leader>uft zR
+
+map <leader>vnp :set nopaste<CR>
+map <leader>vp :set paste<CR>
+
+map <leader>hl :set hlsearch<CR>
+map <leader>xhl :set nohlsearch<CR>
