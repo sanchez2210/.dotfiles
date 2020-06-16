@@ -40,7 +40,7 @@ main(){
   mount /dev/sda1 /mnt/efi
 
   echo 'Install base system + some'
-  pacstrap /mnt base base-devel linux linux-firmware fakeroot gvim grub efibootmgr intel-ucode amd-ucode networkmanager network-manager-applet alacritty sudo git libnotify notification-daemon
+  pacstrap /mnt base base-devel linux linux-firmware fakeroot gvim grub efibootmgr intel-ucode amd-ucode networkmanager network-manager-applet alacritty sudo git libnotify notification-daemon xf86-video-amdgpu
 
   ########## CONFIGURING SYSTEM #############
   genfstab -U /mnt >> /mnt/etc/fstab
@@ -71,6 +71,35 @@ main(){
   echo "[D-BUS Service]" > "/mnt/usr/share/dbus-1/services/org.freedesktop.Notifications.service"
   echo "Name=org.freedesktop.Notifications" >> "/mnt/usr/share/dbus-1/services/org.freedesktop.Notifications.service"
   echo "Exec=/usr/lib/notification-daemon-1.0/notification-daemon" >> "/mnt/usr/share/dbus-1/services/org.freedesktop.Notifications.service"
+
+  # sudo find /sys/ -type f -iname '*brightness*'
+  # Then link it
+  # sudo ln -s /sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-LVDS-1/intel_backlight /sys/class/backlight
+
+  # /etc/X11/xorg.conf.d/20-amdgpu.conf
+  #
+  # Section "Device"
+  #      Identifier "AMD"
+  #      Driver "amdgpu"
+  #      Option "Backlight" "amdgpu_bl0"
+  # EndSection
+
+  # /etc/X11/xorg.conf.d/20-intel.conf
+  #
+  # Section "Device"
+  #     Identifier  "Intel Graphics"
+  #     Driver      "intel"
+  #     Option      "Backlight"  "intel_backlight"
+  # EndSection
+
+  # /etc/udev/rules.d/90-backlight.rules
+
+  # ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+  # ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+  # ACTION=="add", SUBSYSTEM=="leds", RUN+="/bin/chgrp video /sys/class/leds/%k/brightness"
+  # ACTION=="add", SUBSYSTEM=="leds", RUN+="/bin/chmod g+w /sys/class/leds/%k/brightness"
+
+  # usermod -a -G video <user>
 
   arch-chroot /mnt passwd
   arch-chroot /mnt systemctl enable NetworkManager.service
