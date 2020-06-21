@@ -58,10 +58,10 @@ bindsym $mod+ctrl+f exec flameshot gui
 #### sound-section #############################################################################
 ################################################################################################
 
+# exec --no-startup-id pulseaudio --start
+# exec --no-startup-id pa-applet
 exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+a exec xterm -e 'alsamixer'
-exec --no-startup-id pulseaudio --start
-#exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
