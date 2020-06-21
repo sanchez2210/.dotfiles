@@ -48,9 +48,6 @@ bindsym $mod+ctrl+u exec xterm -hold -e 'durt stats-all'
 # clipboard
 bindsym $mod+c exec clipster -sp
 
-# Screenshot
-bindsym $mod+ctrl+f exec flameshot gui
-
 ################################################################################################
 #### sound-section #############################################################################
 ################################################################################################
@@ -72,19 +69,15 @@ bindsym XF86AudioRaiseVolume  exec sh $HOME/.scripts/volume-up.sh
 bindsym XF86AudioLowerVolume  exec sh $HOME/.scripts/volume-down.sh
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec palemoon
-bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F2 exec chromium
+bindsym $mod+F3 exec thunar
 # bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
+# Screenshot
+bindsym Print exec --no-startup-id flameshot gui
+bindsym $mod+ctrl+f exec --no-startup-id flameshot gui
+bindsym $mod+ctrl+g exec --no-startup-id peek
 
 # focus_follows_mouse no
 
@@ -94,11 +87,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# # alternatively, you can use the cursor keys:
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
